@@ -35,11 +35,7 @@ export function TaskList() {
   }
 
   function handleRemoveTask(id: number) {
-    setTasks((t) => {
-      const index = t.findIndex((d) => d.id === id);
-      t.splice(index, 1);
-      return [...t];
-    });
+    setTasks((t) => t.filter((d) => d.id !== id));
   }
 
   return (
